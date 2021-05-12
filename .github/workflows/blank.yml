@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Url Request Steps
-        run: curl -i https://api.day.app/i69HAxZ4CbhBrpuoSt6pfj/推送内容的fs
+        run: curl -i https://api.day.app/${{ secrets.BARK_ID }}/推送内容的fs
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
