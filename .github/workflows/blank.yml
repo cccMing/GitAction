@@ -26,6 +26,9 @@ jobs:
       
       - name: Url Request Steps
         run: curl -i https://api.day.app/${{ secrets.BARK_ID }}/推送内容的fs
+        
+      - name: File Test
+        run: ls
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
