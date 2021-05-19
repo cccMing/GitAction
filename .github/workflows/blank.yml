@@ -28,7 +28,9 @@ jobs:
         run: curl -i https://api.day.app/${{ secrets.BARK_ID }}/推送内容的fs
         
       - name: File Test
-        run: echo "hello hola haha" >> temp/note
+        run: |
+          cd ${{ github.workspace }}/temp
+          echo "hello hola haha" >> note
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
