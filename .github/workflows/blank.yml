@@ -30,7 +30,7 @@ jobs:
       - name: File Test
         run: |
           cd ${{ github.workspace }}/temp
-          echo "hello hola haha" >> note
+          cat tt
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
