@@ -38,7 +38,7 @@ jobs:
           cd bing_img
           date_str=`date +%Y%m%d`
           img_description=`curl -X GET 'https://www.bing.com/HPImageArchive.aspx?n=1&idx=0&format=js'`
-          $img_description >> bing_img.info
+          echo $img_description >> bing_img.info
           img_url=`echo $fu | grep -P '(?<="url":")[^",]+' -o`
           full_img_url='https://www.bing.com'$img_url
           curl -o $date_str.jpg $full_img_url
