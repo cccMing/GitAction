@@ -31,6 +31,15 @@ jobs:
         run: |
           cd ${{ github.workspace }}/temp
           cat tt
+          
+      - name: File Commmit
+        run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
 
       # Runs a single command using the runners shell
       #- name: Run a one-line script
