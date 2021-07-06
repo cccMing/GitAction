@@ -39,10 +39,10 @@ jobs:
           date_str=`date +%Y%m%d`
           img_description=`curl -X GET 'https://www.bing.com/HPImageArchive.aspx?n=1&idx=0&format=js'`
           echo $img_description >> bing_img.info
-          img_url=`echo $fu | grep -P '(?<="url":")[^",]+' -o`
+          img_url=`echo $img_description | grep -P '(?<="url":")[^",]+' -o`
           full_img_url='https://www.bing.com'$img_url
           curl -o $date_str.jpg $full_img_url
-          echo -e >> bing_img.info
+          echo -e > bing_img.info
           git config user.name cccMing
           git config user.email john_ming@outlook.com
           git add .
