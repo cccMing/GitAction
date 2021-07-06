@@ -35,8 +35,9 @@ jobs:
       - name: File Commmit
         run: |
           [ ! -d bing_img  ] && mkdir bing_img
+          cd bing_img
           date_str=`date +%Y%m%d`
-          curl -X GET 'https://www.bing.com/HPImageArchive.aspx?n=1&idx=0&format=js' > $date_str.info
+          curl -X GET 'https://www.bing.com/HPImageArchive.aspx?n=1&idx=0&format=js' >> bing_img.info
           git config user.name cccMing
           git config user.email john_ming@outlook.com
           git add .
