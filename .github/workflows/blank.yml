@@ -42,7 +42,7 @@ jobs:
           img_url=`echo $img_description | grep -P '(?<="url":")[^",]+' -o`
           full_img_url='https://www.bing.com'$img_url
           curl -o $date_str.jpg $full_img_url
-          echo -e > bing_img.info
+          echo -e >> bing_img.info
           git config user.name cccMing
           git config user.email john_ming@outlook.com
           git add .
