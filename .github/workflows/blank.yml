@@ -34,12 +34,15 @@ jobs:
           
       - name: File Commmit
         run: |
-          date > generated.txt
+          [ ! -d bing_img  ] && mkdir bing_img
+          date_str=`date +%Y%m%d`
+          curl -X GET 'https://www.bing.com/HPImageArchive.aspx?n=1&idx=0&format=js' > $date_str.info
           git config user.name cccMing
           git config user.email john_ming@outlook.com
           git add .
-          git commit -m "commit message"
+          git commit -m "commit $date_str"
           git push
+      # date > generated.txt 这个是写入文件测试，要git之前
 
       # Runs a single command using the runners shell
       #- name: Run a one-line script
